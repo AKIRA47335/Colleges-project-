@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Motors | Premium &amp; Luxury Cars</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0c0e;--panel:#14161a;--line:#2a2d33;--text:#eceae5;--muted:#9a9ea6;--gold:#c9a45c;--gold2:#e6c98a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Manrope","Segoe UI",Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:20;background:rgba(11,12,14,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:"Cormorant Garamond",serif;font-size:1.7rem;letter-spacing:.14em}
+.logo span{color:var(--gold)}
+nav a{margin-left:30px;font-size:.92rem;color:var(--muted);transition:color .25s;padding-bottom:4px;border-bottom:1px solid transparent}
+nav a:hover{color:var(--text);border-color:var(--gold)}
+.btn{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:12px 28px;font:600 .92rem Manrope,sans-serif;background:none;cursor:pointer;transition:background .3s,color .3s}
+.btn:hover{background:var(--gold);color:#111}
+.btn.solid{background:var(--gold);color:#111}
+.btn.solid:hover{background:var(--gold2)}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:72px;
+background:radial-gradient(ellipse at 75% 40%,#2a2418 0,transparent 55%),linear-gradient(180deg,#0b0c0e,#101216)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.8rem,6.5vw,5.4rem);line-height:1.02;animation:rise 1s .1s both}
+.hero p{color:var(--muted);max-width:46ch;margin:22px 0 34px;animation:rise 1s .3s both}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;animation:rise 1s .5s both}
+.hero-art{animation:drive 1.4s .2s cubic-bezier(.2,.7,.2,1) both}
+.hero-art svg{width:100%;height:auto}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes drive{from{opacity:0;transform:translateX(90px)}to{opacity:1;transform:none}}
+
+/* stats */
+.stats{border-block:1px solid var(--line);background:var(--panel)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:30px 10px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border:0}
+.stat b{display:block;font:600 2.2rem "Cormorant Garamond",serif;color:var(--gold)}
+.stat span{color:var(--muted);font-size:.88rem}
+
+/* collection */
+section{padding:90px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.sec-head h2{font-size:clamp(2rem,4vw,3rem)}
+.sec-head p{color:var(--muted);margin:6px 0 0}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{background:none;border:1px solid var(--line);color:var(--muted);padding:8px 20px;cursor:pointer;font:500 .88rem Manrope,sans-serif;transition:.25s}
+.filters button:hover{color:var(--text);border-color:var(--gold)}
+.filters button.on{background:var(--gold);border-color:var(--gold);color:#111}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:24px}
+.card{background:var(--panel);border:1px solid var(--line);cursor:pointer;display:flex;flex-direction:column;text-align:left;color:inherit;padding:0;font:inherit;transition:border-color .3s,transform .3s}
+.card:hover{border-color:var(--gold);transform:translateY(-6px)}
+.thumb{aspect-ratio:16/10;overflow:hidden;background:linear-gradient(135deg,#1c1f25,#101216);border-bottom:1px solid var(--line);display:grid;place-items:center}
+.thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover .thumb img{transform:scale(1.07)}
+.thumb svg{width:96%;height:auto}
+.card-body{padding:20px 22px 24px}
+.kind{font-size:.8rem;color:var(--gold)}
+.card h3{font-size:1.7rem;margin:2px 0 6px}
+.card p{color:var(--muted);font-size:.9rem;margin:0 0 14px}
+.from{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:12px;font-size:.88rem;color:var(--muted)}
+.from b{color:var(--text)}
+
+/* why */
+.why{background:var(--panel);border-block:1px solid var(--line)}
+.why .grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.why .item{border:1px solid var(--line);padding:28px;background:var(--bg)}
+.why h3{font-size:1.5rem;color:var(--gold);margin-bottom:8px}
+.why p{color:var(--muted);margin:0;font-size:.94rem}
+
+/* test drive */
+.book{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+form{display:grid;gap:14px;border:1px solid var(--line);padding:30px;background:var(--panel)}
+label{font-size:.85rem;color:var(--muted);display:grid;gap:6px}
+input,select{background:var(--bg);border:1px solid var(--line);color:var(--text);padding:12px;font:inherit}
+input:focus,select:focus{border-color:var(--gold);outline:none}
+.msg{color:var(--gold2);min-height:1.4em;margin:0}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:50px 0 30px;color:var(--muted);font-size:.9rem}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;margin-bottom:30px}
+footer h4{color:var(--text);margin:0 0 10px;font-weight:600}
+footer a{display:block;padding:2px 0}
+footer a:hover{color:var(--gold)}
+.fine{border-top:1px solid var(--line);padding-top:20px;font-size:.8rem}
+
+/* detail dialog */
+dialog{width:min(980px,94vw);max-height:92vh;overflow:auto;background:var(--panel);color:var(--text);border:1px solid var(--gold);padding:0}
+dialog::backdrop{background:rgba(0,0,0,.78)}
+dialog[open]{animation:rise .4s both}
+.dlg{display:grid;grid-template-columns:1fr 1fr}
+.dlg .thumb{aspect-ratio:auto;min-height:320px;height:100%;border:0;border-right:1px solid var(--line)}
+.dlg .info{padding:34px}
+.dlg h2{font-size:2.4rem}
+.x{position:absolute;top:10px;right:14px;background:none;border:0;color:var(--text);font-size:2rem;cursor:pointer;z-index:2}
+.vars{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 20px}
+.vars button{background:none;border:1px solid var(--line);color:var(--text);padding:8px 18px;cursor:pointer;font:500 .9rem Manrope,sans-serif;transition:.25s}
+.vars button:hover{border-color:var(--gold)}
+.vars button.on{background:var(--gold);color:#111;border-color:var(--gold)}
+table{width:100%;border-collapse:collapse;border:1px solid var(--line);margin-bottom:20px;font-size:.92rem}
+th,td{text-align:left;padding:9px 14px;border-bottom:1px solid var(--line)}
+tr:last-child th,tr:last-child td{border:0}
+th{color:var(--muted);font-weight:500;width:44%;border-right:1px solid var(--line)}
+.price{display:flex;justify-content:space-between;align-items:baseline;border:1px solid var(--gold);padding:14px 18px;margin-bottom:18px}
+.price b{font:600 2rem "Cormorant Garamond",serif;color:var(--gold2)}
+.price small{color:var(--muted);display:block}
+
+@media(max-width:860px){
+ .hero .wrap,.book,.dlg,footer .cols{grid-template-columns:1fr}
+ .stats .wrap{grid-template-columns:1fr 1fr}.stat:nth-child(2){border:0}
+ nav{display:none}
+ .dlg .thumb{min-height:220px;border-right:0;border-bottom:1px solid var(--line)}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="wrap">
+  <a class="logo" href="#top">MAISON<span>.</span>MOTORS</a>
+  <nav>
+   <a href="#collection">Collection</a>
+   <a href="#why">Ownership</a>
+   <a href="#drive">Test drive</a>
+   <a href="#contact">Contact</a>
+  </nav>
+  <a class="btn" href="#drive">Book a drive</a>
+ </div>
+</header>
+
+<div id="top" class="hero">
+ <div class="wrap">
+  <div>
+   <h1>Drive the extraordinary.</h1>
+   <p>Explore eight of the world's most admired sedans, SUVs and coupes. Compare variants, check specifications and see the on-road price before you visit.</p>
+   <div class="cta">
+    <a class="btn solid" href="#collection">View the collection</a>
+    <a class="btn" href="#drive">Book a test drive</a>
+   </div>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+   <svg viewBox="0 0 600 240" fill="none" stroke="#c9a45c" stroke-width="2">
+    <path d="M20 170h560M50 170c10-45 60-60 120-68l60-34c40-14 120-14 160 0l70 34c50 6 80 30 90 68"/>
+    <path d="M232 68l-18 34h200l-40-34zM300 68v34"/>
+    <circle cx="150" cy="172" r="38"/><circle cx="150" cy="172" r="16"/>
+    <circle cx="440" cy="172" r="38"/><circle cx="440" cy="172" r="16"/>
+   </svg>
+  </div>
+ </div>
+</div>
+
+<div class="stats">
+ <div class="wrap">
+  <div class="stat"><b>8</b><span>Models on display</span></div>
+  <div class="stat"><b>24</b><span>Variants to choose from</span></div>
+  <div class="stat"><b>5 yrs</b><span>Warranty on every car</span></div>
+  <div class="stat"><b>24/7</b><span>Roadside assistance</span></div>
+ </div>
+</div>
+
+<section id="collection">
+ <div class="wrap">
+  <div class="sec-head">
+   <div><h2>The collection</h2><p>Select a car to see its variants, specs and on-road price.</p></div>
+   <div class="filters" id="filters" role="group" aria-label="Filter by body type"></div>
+  </div>
+  <div class="grid" id="grid"></div>
+ </div>
+</section>
+
+<section class="why" id="why">
+ <div class="wrap">
+  <div class="sec-head"><h2>The ownership experience</h2></div>
+  <div class="grid">
+   <div class="item"><h3>Certified quality</h3><p>Every car passes a 150-point inspection before delivery.</p></div>
+   <div class="item"><h3>Flexible finance</h3><p>Low-rate loans and lease plans tailored to your budget.</p></div>
+   <div class="item"><h3>Home delivery</h3><p>Your new car is delivered, registered and ready to drive.</p></div>
+   <div class="item"><h3>Dedicated service</h3><p>Scheduled maintenance with a personal advisor.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="drive">
+ <div class="wrap book">
+  <div>
+   <h2 style="font-size:clamp(2rem,4vw,3rem)">Book a test drive</h2>
+   <p style="color:var(--muted);max-width:44ch">Choose a model and a date. A showroom advisor will confirm your slot within one working day.</p>
+  </div>
+  <form id="form">
+   <label>Full name<input required name="n" autocomplete="name"></label>
+   <label>Phone<input required type="tel" name="p" autocomplete="tel"></label>
+   <label>Model<select id="model"></select></label>
+   <label>Preferred date<input required type="date" id="date"></label>
+   <button class="btn solid" type="submit">Request test drive</button>
+   <p class="msg" id="msg" role="status"></p>
+  </form>
+ </div>
+</section>
+
+<footer id="contact">
+ <div class="wrap">
+  <div class="cols">
+   <div><div class="logo">MAISON<span>.</span>MOTORS</div><p>Premium and luxury cars, presented clearly.</p></div>
+   <div><h4>Explore</h4><a href="#collection">Collection</a><a href="#why">Ownership</a><a href="#drive">Test drive</a></div>
+   <div><h4>Visit</h4><a href="#contact">Showroom hours</a><a href="#contact">Find us</a></div>
+   <div><h4>Contact</h4><a href="#contact">sales@maisonmotors.example</a><a href="#contact">+00 000 000 0000</a></div>
+  </div>
+  <div class="fine">Prices are indicative on-road prices in USD and vary by city and options. This is a student project and not an official dealer site.</div>
+ </div>
+</footer>
+
+<dialog id="dlg" aria-label="Car details"></dialog>
+
+<script>
+/* Camry and BMW 7 use photos (img). Every car also has an illustration (art: body type, colour) that is drawn in code and used when there is no photo. */
+const CARS=[
+{id:"camry",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHq3eN2GqL9ueVLyIQBKixui4cAOvOYxW2Xkklu0e0sQ&s=10",art:["sedan","#9aa3ad"],name:"Toyota Camry",type:"Sedan",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDUT4tNiZKe1wBhfdgLJT7uql3g1-NovxB6KPJPT8iE035h5ARAZCrcXE&s=10",
+ desc:"A mid-size sedan known for its reliability, comfort and fuel efficiency.",
+ variants:[["Base",25000],["Sport",28500],["Luxury",31500]],
+ specs:{Engine:"2.5L petrol",Power:"203 hp",Transmission:"Automatic","0-100 km/h":"8.4 s",Mileage:"30 km/l"}},
+{id:"bmw7",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF0n8G6lKvIv3Bs_3HKTcRcXcm8gFbPap75318so7hTg&s=10",art:["sedan","#3a4250"],name:"BMW 7 Series",type:"Sedan",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF0n8G6lKvIv3Bs_3HKTcRcXcm8gFbPap75318so7hTg&s=10",
+ desc:"A luxury sedan that offers advanced technology, comfort and performance.",
+ variants:[["740i",75000],["750i",98000],["M",125000]],
+ specs:{Engine:"3.0L turbo petrol",Power:"375 hp",Transmission:"8-speed automatic","0-100 km/h":"5.3 s",Mileage:"11 km/l"}},
+{id:"sclass",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNu1PIKhOMvO59qV-TNdnENYK9FC_6r-orwTLk6LrIQQ&s=10",art:["sedan","#4a5363"],name:"Mercedes-Benz S-Class",type:"Sedan",
+ desc:"The long-standing benchmark for refinement, with a quiet cabin and class-leading rear comfort.",
+ variants:[["S 450",110000],["S 500",125000],["Maybach S 580",195000]],
+ specs:{Engine:"3.0L turbo petrol",Power:"367 hp",Transmission:"9-speed automatic","0-100 km/h":"5.1 s",Mileage:"10 km/l"}},
+{id:"q7",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrMAemsmOLVvVDfJrMBV0gERsEzJV0KCgqnHc0zl4NkA&s=10",art:["suv","#6b7f91"],name:"Audi Q7",type:"SUV",
+ desc:"A seven-seat SUV with quattro all-wheel drive and a spacious, technology-rich interior.",
+ variants:[["Premium",62000],["Premium Plus",69000],["Prestige",76000]],
+ specs:{Engine:"3.0L turbo petrol",Power:"335 hp",Transmission:"8-speed automatic","0-100 km/h":"5.6 s",Mileage:"9 km/l"}},
+{id:"rr",img:"https://akm-img-a-in.tosshub.com/indiatoday/images/story/201903/Range_Rover_Sentinel_Pic.jpeg?VersionId=yh4SM2bPx2us0rqCKVtDP26D3bso5iPm&size=690:388",art:["suv","#2f5a45"],name:"Range Rover",type:"SUV",
+ desc:"A flagship SUV that pairs a commanding road presence with true off-road ability.",
+ variants:[["SE",108000],["HSE",125000],["Autobiography",170000]],
+ specs:{Engine:"3.0L turbo diesel",Power:"346 hp",Transmission:"8-speed automatic","0-100 km/h":"6.1 s",Mileage:"9 km/l"}},
+{id:"x5",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVRowmOQRSaQvB58BUbrzFST6dgqIGhA7YX5xoanD2rlH6jqUctx02ySQ9&s=10",art:["suv","#8f2230"],name:"BMW X5",type:"SUV",
+ desc:"A sporty family SUV that balances everyday practicality with sharp handling.",
+ variants:[["xDrive40i",68000],["xDrive50e",74000],["M60i",92000]],
+ specs:{Engine:"3.0L turbo petrol",Power:"375 hp",Transmission:"8-speed automatic","0-100 km/h":"5.3 s",Mileage:"10 km/l"}},
+{id:"911",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn280Kb5LIrq73YCbg_T18BM6PlHOXo7pIzD8cFTlr5qDDsH7V13_EndRV&s=10",art:["coupe","#c23b2f"],name:"Porsche 911",type:"Coupe",
+ desc:"The rear-engined icon, still defined by pure driving feel and everyday usability.",
+ variants:[["Carrera",115000],["Carrera S",136000],["Turbo S",235000]],
+ specs:{Engine:"3.0L twin-turbo flat-six",Power:"379 hp",Transmission:"8-speed PDK","0-100 km/h":"4.2 s",Mileage:"9 km/l"}},
+{id:"svj",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPxhKxXVpgA07zIUT9TEffd9tVfowUD3Rqhcpd7NXbgZ3yEP7l9i98-63U&s=10",art:["coupe","#e0b020"],name:"Lamborghini Aventador SVJ",type:"Coupe",
+ desc:"A limited-run V12 supercar built for the track, with active aerodynamics and extreme performance.",
+ variants:[["SVJ Coupe",520000],["SVJ Roadster",580000],["SVJ 63",640000]],
+ specs:{Engine:"6.5L naturally aspirated V12",Power:"759 hp",Transmission:"7-speed automated manual","0-100 km/h":"2.8 s",Mileage:"5 km/l"}}
+];
+const fmt=n=>"$"+n.toLocaleString("en-US");
+const mix=(h,t,a)=>{const g=(x,i)=>parseInt(x.slice(i,i+2),16);return "#"+[1,3,5].map(i=>Math.round(g(h,i)+(g(t,i)-g(h,i))*a).toString(16).padStart(2,"0")).join("")};
+const SHAPES={
+ sedan:{wy:192,r:36,ly:156,door:"M296 102 L296 184",
+  body:"M36 192 L36 166 Q38 150 66 146 L150 134 L196 108 Q214 96 244 94 L372 94 Q404 96 428 122 L446 138 L520 146 Q566 152 568 176 L568 192 Z",
+  win:"M200 114 Q214 104 240 102 L290 102 L290 134 L170 134 Z M302 102 L368 102 Q392 104 408 124 L414 134 L302 134 Z",extra:""},
+ suv:{wy:196,r:40,ly:146,door:"M296 92 L296 190",
+  body:"M36 196 L36 150 Q38 134 66 130 L120 124 L160 92 Q172 84 196 84 L420 84 Q440 86 452 104 L470 126 L524 134 Q566 140 568 166 L568 196 Z",
+  win:"M172 106 Q180 94 200 92 L290 92 L290 124 L150 124 Z M302 92 L418 92 Q432 94 442 108 L456 124 L302 124 Z",
+  extra:"M186 78 L424 78"},
+ coupe:{wy:192,r:37,ly:158,door:"M296 104 L296 184",
+  body:"M36 192 L36 170 Q38 156 70 152 L180 140 Q230 100 290 96 L360 96 Q410 100 450 134 L524 146 Q566 152 568 176 L568 192 Z",
+  win:"M214 134 Q246 108 292 104 L358 104 Q392 108 428 134 Z",extra:"M30 148 L74 144 L74 152 L30 156 Z"},
+ ev:{wy:192,r:36,ly:156,door:"M300 100 L300 184",
+  body:"M36 192 L36 168 Q38 152 66 148 L170 136 Q220 96 290 92 L350 92 Q420 100 470 136 L524 144 Q566 150 568 176 L568 192 Z",
+  win:"M196 124 Q232 102 292 100 L352 100 Q410 106 446 134 L196 134 Z",extra:""}
+};
+function carArt(c){
+ const [k,col]=c.art,S=SHAPES[k],id="g"+c.id;
+ const wheel=x=>{let sp="";for(let i=0;i<5;i++){const a=i*72*Math.PI/180;
+  sp+=`<line x1="${x}" y1="${S.wy}" x2="${(x+Math.cos(a)*S.r*.6).toFixed(1)}" y2="${(S.wy+Math.sin(a)*S.r*.6).toFixed(1)}" stroke="#c9ccd1" stroke-width="4"/>`}
+  return `<circle cx="${x}" cy="${S.wy}" r="${S.r+9}" fill="#07080a"/><circle cx="${x}" cy="${S.wy}" r="${S.r}" fill="#15171a"/><circle cx="${x}" cy="${S.wy}" r="${S.r*.66}" fill="#8e939b"/>${sp}<circle cx="${x}" cy="${S.wy}" r="5" fill="#2a2d33"/>`};
+ return `<svg viewBox="0 0 600 260" role="img" aria-label="${c.name} illustration"><defs>
+ <linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${mix(col,"#ffffff",.35)}"/><stop offset=".55" stop-color="${col}"/><stop offset="1" stop-color="${mix(col,"#000000",.45)}"/></linearGradient>
+ <linearGradient id="${id}w" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a9bccb"/><stop offset="1" stop-color="#26313b"/></linearGradient>
+ <radialGradient id="${id}s"><stop offset="0" stop-color="#c9a45c" stop-opacity=".3"/><stop offset="1" stop-color="#c9a45c" stop-opacity="0"/></radialGradient></defs>
+ <ellipse cx="300" cy="120" rx="290" ry="115" fill="url(#${id}s)"/>
+ <ellipse cx="300" cy="${S.wy+S.r+8}" rx="270" ry="9" fill="#000" opacity=".55"/>
+ <path d="${S.body}" fill="url(#${id})"/>
+ <path d="${S.extra}" fill="${mix(col,"#000000",.3)}" stroke="${mix(col,"#000000",.3)}" stroke-width="3"/>
+ <path d="${S.win}" fill="url(#${id}w)"/>
+ <path d="${S.door}" stroke="#000" stroke-opacity=".35" stroke-width="2"/>
+ <path d="M60 ${S.wy-26} L540 ${S.wy-30}" stroke="#fff" stroke-opacity=".25" stroke-width="2"/>
+ <path d="M538 ${S.ly} L566 ${S.ly+6} L566 ${S.ly+12} L534 ${S.ly+8} Z" fill="#fff4cf"/>
+ <rect x="36" y="${S.ly}" width="9" height="10" fill="#d4222c"/>
+ ${wheel(140)}${wheel(462)}</svg>`}
+const ART={};CARS.forEach(c=>ART[c.id]=carArt(c));
+const pic=c=>c.img?`<img src="${c.img}" alt="${c.name}" loading="lazy" onerror="this.outerHTML=ART['${c.id}']">`:ART[c.id];
+
+const grid=document.getElementById("grid"),filters=document.getElementById("filters"),dlg=document.getElementById("dlg");
+const types=["All",...new Set(CARS.map(c=>c.type))];
+filters.innerHTML=types.map((t,i)=>`<button class="${i?"":"on"}" data-t="${t}">${t}</button>`).join("");
+
+function render(t){
+ grid.innerHTML=CARS.filter(c=>t==="All"||c.type===t).map(c=>`
+ <button class="card" data-id="${c.id}">
+  <div class="thumb">${pic(c)}</div>
+  <div class="card-body"><div class="kind">${c.type}</div><h3>${c.name}</h3><p>${c.desc}</p>
+  <div class="from"><span>On-road from</span><b>${fmt(c.variants[0][1])}</b></div></div>
+ </button>`).join("");
+}
+filters.onclick=e=>{const b=e.target.closest("button");if(!b)return;
+ filters.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));render(b.dataset.t)};
+render("All");
+
+function open(c,vi=0){
+ const [vn,vp]=c.variants[vi];
+ dlg.innerHTML=`<button class="x" aria-label="Close" onclick="dlg.close()">&times;</button>
+ <div class="dlg"><div class="thumb">${pic(c)}</div>
+ <div class="info"><div class="kind">${c.type}</div><h2>${c.name}</h2>
+ <p style="color:var(--muted)">${c.desc}</p>
+ <div class="kind">Variants</div>
+ <div class="vars">${c.variants.map((v,i)=>`<button class="${i===vi?"on":""}" data-i="${i}">${v[0]}</button>`).join("")}</div>
+ <table>${Object.entries(c.specs).map(([k,v])=>`<tr><th>${k}</th><td>${v}</td></tr>`).join("")}</table>
+ <div class="price"><div><small>On-road price, ${vn}</small></div><b>${fmt(vp)}</b></div>
+ <button class="btn solid" id="td">Book a test drive</button></div></div>`;
+ dlg.querySelector(".vars").onclick=e=>{const b=e.target.closest("button");if(b)open(c,+b.dataset.i)};
+ dlg.querySelector("#td").onclick=()=>{dlg.close();document.getElementById("model").value=c.name;location.hash="drive"};
+ if(!dlg.open)dlg.showModal();
+}
+grid.onclick=e=>{const b=e.target.closest(".card");if(b)open(CARS.find(c=>c.id===b.dataset.id))};
+dlg.onclick=e=>{if(e.target===dlg)dlg.close()};
+
+document.getElementById("model").innerHTML=CARS.map(c=>`<option>${c.name}</option>`).join("");
+const d=document.getElementById("date");d.min=new Date().toISOString().split("T")[0];
+document.getElementById("form").onsubmit=e=>{e.preventDefault();
+ document.getElementById("msg").textContent=`Thank you. We have received your request for the ${document.getElementById("model").value} and will call you to confirm.`;
+ e.target.reset()};
+</script>
+</body>
+</html>
